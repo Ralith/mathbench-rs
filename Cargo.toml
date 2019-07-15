@@ -9,6 +9,8 @@ approx = { version = "~0.3", default-features = false }
 mint = "~0.5"
 rand = { version = "~0.6", default-features = false }
 rand_xoshiro = "~0.1"
+pathfinder_simd = { git = "https://github.com/servo/pathfinder" }
+pathfinder_geometry = { git = "https://github.com/servo/pathfinder" }
 
 [dependencies.glam]
 version = "~0.7"

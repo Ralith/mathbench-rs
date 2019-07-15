@@ -1,6 +1,7 @@
 use approx;
 use glam;
 use mint;
+use pathfinder_geometry;
 use rand::{Rng, SeedableRng};
 use rand_xoshiro::Xoshiro256Plus;
 
@@ -52,6 +53,14 @@ impl_random_vec!(cgmath::Vector4<f32>);
 impl_random_vec!(nalgebra::Vector2<f32>);
 impl_random_vec!(nalgebra::Vector3<f32>);
 impl_random_vec!(nalgebra::Vector4<f32>);
+impl_random_vec!(pathfinder_geometry::vector::Vector2F, random_pf_vec2);
+
+pub fn random_pf_vec2<R>(rng: &mut R) -> pathfinder_geometry::vector::Vector2F
+where
+    R: Rng,
+{
+    pathfinder_geometry::vector::Vector2F::new(rng.gen(), rng.gen())
+}
 
 pub fn random_quat<R>(rng: &mut R) -> mint::Quaternion<f32>
 where
